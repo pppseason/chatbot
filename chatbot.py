@@ -24,5 +24,5 @@ def tuling_reply(msg):
     return reply or defaultReply
 
 
-itchat.auto_login(hotReload=False,enableCmdQR=2)
+itchat.auto_login(hotReload=True,enableCmdQR=2)
 itchat.run()
