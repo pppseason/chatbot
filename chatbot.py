@@ -8,12 +8,15 @@ def get_reply(msg):
     data = {
         'key' : TULING_KEY,
         'info' : msg,
-#        'loc' : '广东省惠州市',
         'userid' : '大神彭',
     }
     try:
-        r = requests.post(apiUrl,data=data).json()
-        return r.get("text")
+        if r.get("url") == None:
+            return r.get("text")
+        else:
+            return r.get("text") + r.get("url")
+    except:
+        return None
     except:
         return None
 
